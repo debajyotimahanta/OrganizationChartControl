@@ -1,10 +1,11 @@
 #container {
     height: 140px;
-    left: 0;
+    left: 10px;
     top: 82px;
-    width: 400px;
+    width: 600px;
     z-index: 10;
-    position: absolute;
+    position: relative;
+    overflow: hidden;
 }
 
 #slide {
@@ -12,7 +13,7 @@
     top: 0;
     width: 5000px;
     z-index: 10;
-    left: 200px;
+    left: 20px;
     position: absolute;
 }
 
@@ -21,18 +22,25 @@
     height: 132px;
     margin-right: 10px;
     width: 167px;
-    background-color: purple;
+    background-color: #d3d3d3;
     top: 0;
     float: left;
     list-style-type: none;
+    color:black;
+}
+
+#prev {
+    float: right;
+    top: 112px;
+    cursor: pointer;
+    position: absolute;
+
 }
 
 #next {
     float: right;
+    top: 112px;
+    left:630px;
     cursor: pointer;
-}
-
-#prev {
-    float: left;
-    cursor: pointer;
+    position: absolute;
 }

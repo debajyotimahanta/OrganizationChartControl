@@ -22,13 +22,25 @@ $(function(){
             mouseisdown = false;
         });
 
+
     $(".box").click(function(){
+
+        console.log("in");
+        console.log($(this).text());
+        console.log($(this).position().left);
+        $("#slide").css('left','-800px')
+
+
+    })
+
+    $(".box1").click(function(){
 
         console.log("in");
         $(".box").height("132px");
         $(".box").width("167px");
         $(this).animate({"height":400,"width":400},
             {
+                "duration":50,
                 complete:function(){
 
                     ScrollDown();
@@ -46,12 +58,12 @@ $(function(){
 
         var leftVal = $("#slide").css("left").replace(/[^-\d\.]/g, '');
         leftVal = parseInt(leftVal);
-        if(leftVal < 200){
+
             $("#slide").stop().animate({"left":leftVal + 177  + 'px'}, { "duration": 400, "easing": "linear" });
             if (mouseisdown)
                 setTimeout(ScrollUp, 400);
 
-        }
+
     }
 
     function ScrollDown(){
