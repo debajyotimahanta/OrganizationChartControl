@@ -1,0 +1,38 @@
+#container {
+    height: 140px;
+    left: 0;
+    top: 82px;
+    width: 400px;
+    z-index: 10;
+    position: absolute;
+}
+
+#slide {
+    height: 155px;
+    top: 0;
+    width: 5000px;
+    z-index: 10;
+    left: 200px;
+    position: absolute;
+}
+
+.box {
+
+    height: 132px;
+    margin-right: 10px;
+    width: 167px;
+    background-color: purple;
+    top: 0;
+    float: left;
+    list-style-type: none;
+}
+
+#next {
+    float: right;
+    cursor: pointer;
+}
+
+#prev {
+    float: left;
+    cursor: pointer;
+}
