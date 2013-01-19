@@ -39,11 +39,16 @@ $(function(){
 
 
     })
-    $(".box").mouseover(function(){
+    $(".box").mouseenter(function(){
 
         console.log("focus");
         //$(".box").css("background-color",$(this).css("background-color"));
         $(this).css("background-color", "#e0ffff");
+        $(this).css('z-index', '10').stop().animate({
+            'height' : 200+'px',
+            'width' : 200+'px',
+            'left' : 10+'px',
+            'top' : 10+'px'}, 210);
     }).mouseleave(function(){
             console.log("leave");
             $(".box").css("background-color","#d3d3d3");
