@@ -26,12 +26,29 @@ $(function(){
     $(".box").click(function(){
 
         console.log("in");
-        console.log($(this).text());
-        console.log($(this).position().left);
-        $("#slide").css('left','-800px')
+
+        var index=$(this).text()*1;
+
+        $(".box").width($(this).width());
+        move=-170*(index-2);
+        $("#slide").css('left',0+'px');
+        $("#slide").css('left',move-50+'px');
+        $(this).width($(this).width()*2);
+        //$(".manager").css('left',move-50+'px');
+
 
 
     })
+    $(".box").mouseover(function(){
+
+        console.log("focus");
+        //$(".box").css("background-color",$(this).css("background-color"));
+        $(this).css("background-color", "#e0ffff");
+    }).mouseleave(function(){
+            console.log("leave");
+            $(".box").css("background-color","#d3d3d3");
+
+        })
 
     $(".box1").click(function(){
 
