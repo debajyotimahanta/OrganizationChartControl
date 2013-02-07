@@ -25,39 +25,47 @@ $(function(){
 
     $(".box").click(function(){
 
-        console.log("in");
+        console.log("isiden");
 
-        var index=$(this).text()*1;
+        var index=$(this).index()*1;
+        console.log((219-(87*index)));
+        $(".box").width("85px");
+        $(".box").height("332px");
+        //need to replace 410 and 173
+        $("#slide").stop().animate({"left":(400-245-(87*index))});
+        $($(".box")[index]).width($($(".box")[index-1]).width()*5);
+        $($(".box")[index]).height($($(".box")[index-1]).height()*1.5);
+        $(this).css("margin-top","-5px");
+        $(this).html('');
 
-        $(".box").width($(this).width());
-        move=-170*(index-2);
-        $("#slide").css('left',0+'px');
-        $("#slide").css('left',move-50+'px');
-        $(this).width($(this).width()*2);
-        //$(".manager").css('left',move-50+'px');
 
 
-
-    })
+    });
     $(".box").mouseenter(function(){
-
+     
         console.log("focus");
         //$(".box").css("background-color",$(this).css("background-color"));
-        $(this).css("background-color", "#e0ffff");
-        $(this).css('z-index', '10').stop().animate({
-            'height' : 200+'px',
-            'width' : 200+'px',
-            'left' : 10+'px',
-            'top' : 10+'px'}, 210);
-    }).mouseleave(function(){
-            console.log("leave");
-            $(".box").css("background-color","#d3d3d3");
+        $(this).css("background-color", "#f9f9f9");
 
-        })
+        $(this).css("margin-top","10px");
+        $(this).css("border-right","solid");
+        $(this).prev().css("border-right","solid");
+
+
+    
+    }).mouseleave(function(){
+        $(".box").css("background-color", "#e7e7e7");
+
+        $(".box").css("margin-top","0px");
+        $(".box").css("border-right","none");
+
+    })
+
+    
 
     $(".box1").click(function(){
 
-        console.log("in");
+        console.log("inside");
         $(".box").height("132px");
         $(".box").width("167px");
         $(this).animate({"height":400,"width":400},
@@ -76,11 +84,21 @@ $(function(){
 
     })
 
+    $("#next").click(function(event) {
+        console.log("in");
+        ScrollUp();
+    });
+
+    $("#next").click(function(event) {
+        ScrollDown();
+    });
+
+
     function ScrollUp(){
 
         var leftVal = $("#slide").css("left").replace(/[^-\d\.]/g, '');
         leftVal = parseInt(leftVal);
-
+        console.log(leftVal )
             $("#slide").stop().animate({"left":leftVal + 177  + 'px'}, { "duration": 400, "easing": "linear" });
             if (mouseisdown)
                 setTimeout(ScrollUp, 400);
@@ -92,6 +110,7 @@ $(function(){
 
         var leftVal = $("#slide").css("left").replace(/[^-\d\.]/g, '');
         leftVal = parseInt(leftVal);
+        console.log(leftVal )
         $("#slide").stop().animate({"left":leftVal - 177  + 'px'}, { "duration": 400, "easing": "linear" });
         if (mouseisdown)
             setTimeout(ScrollDown, 400);

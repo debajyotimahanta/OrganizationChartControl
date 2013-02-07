@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUnit Test Suite</title>
+	<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.11.0.css" type="text/css" media="screen">
+	<script type="text/javascript" src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>
+
+	<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+	<script type='text/javascript' src="https://raw.github.com/documentcloud/underscore/1.1.7/underscore.js"></script>
+	<script type='text/javascript' src="https://raw.github.com/documentcloud/backbone/0.5.3/backbone.js"></script>
+	<script type='text/javascript' src="https://raw.github.com/derickbailey/backbone.modelbinding/v0.2.1/backbone.modelbinding.js"></script>
+
+
+	<script src="js/models/person.js"></script>
+	<script src="js/models/manager.js"></script>
+	<script src="js/collections/persons.js"></script>
+	<<script src="js/views/person.js"></script>
+
+	<!---template-->
+	<script id="item-template" type="text/x-jquery-tmpl">
+    	<a href="#"><%=Name%></a>
+	</script>
+
+	<!-- Your project file goes here -->
+	<!--<script type="text/javascript" src="myProject.js"></script>-->
+	<!-- Your tests file goes here --> 
+	<script type="text/javascript" src="myTests.js"></script>
+</head>
+<body>
+	<h1 id="qunit-header">QUnit Test Suite</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+</body>
+</html>
