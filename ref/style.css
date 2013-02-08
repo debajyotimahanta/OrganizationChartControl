@@ -44,6 +44,7 @@ height: 100px;
     list-style-type: none;
     color:black;
     cursor: pointer;
+    
 }
 .rotate {
         block-progression: lr;
@@ -82,4 +83,31 @@ width: 300px;
     left:950px;
     cursor: pointer;
     position: absolute;
+}
+        p{
+                margin: 0px;
+            }
+            .content
+            {
+                vertical-align: top;
+            }
+ ol.reportes
+{
+  width: 500px;  /* room for 3 columns */
+}
+ol.reportes li
+{
+  float: left;
+  width: 250px;  /* accommodate the widest item */
+  list-style-type: none;    
+}
+/* stop the floating after the list */
+br
+{
+  clear: left;
+}
+/* separate the list from what follows it */
+div.wrapper
+{
+  margin-bottom: 1em;
 }

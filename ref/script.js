@@ -33,10 +33,19 @@ $(function(){
         $(".box").height("332px");
         //need to replace 410 and 173
         $("#slide").stop().animate({"left":(400-245-(87*index))});
-        $($(".box")[index]).width($($(".box")[index-1]).width()*5);
-        $($(".box")[index]).height($($(".box")[index-1]).height()*1.5);
+        $($(".box")[index]).width("550px");
+        $($(".box")[index]).height($($(".box")[index-1]).height()*1);
         $(this).css("margin-top","-5px");
         $(this).html('');
+        var that=this;
+        $.get("insidecontent.html",function(data,status){
+            console.log(data);
+            $(that).css("overflow-Y","scroll");
+            $(that).html(data);
+        })
+        
+
+
 
 
 
